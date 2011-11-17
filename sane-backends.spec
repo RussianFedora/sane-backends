@@ -7,10 +7,10 @@ Release: 3%{?dist}.R
 # see LICENSE for details
 License: GPLv2+ and GPLv2+ with exceptions and Public Domain
 Group: System Environment/Libraries
-Source0: ftp://ftp.sane-project.org/pub/sane/%{name}-%{version}/%{name}-%{version}.tar.gz
+Source0: http://pkgs.fedoraproject.org/repo/pkgs/sane-backends/%{name}-%{version}.tar.gz/be586a23633949cf2ecf0c9c6d769130/%{name}-%{version}.tar.gz
 Source1: sane.png
 # upstream forgot some files in the 1.0.21 tarball:
-Patch0: ftp://ftp.sane-project.org/pub/sane/%{name}-%{version}/%{name}-%{version}-i18n.patch
+Patch0: %{name}-%{version}-i18n.patch
 Patch1: sane-backends-1.0.21-pkgconfig.patch
 Patch2: sane-backends-1.0.20-open-macro.patch
 Patch3: sane-backends-1.0.21-udev.patch
