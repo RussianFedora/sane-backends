@@ -1,7 +1,7 @@
 Summary: Scanner access software
 Name: sane-backends
 Version: 1.0.21
-Release: 3%{?dist}
+Release: 3%{?dist}.R
 # lib/ is LGPLv2+, backends are GPLv2+ with exceptions
 # Tools are GPLv2+, docs are public domain
 # see LICENSE for details
@@ -97,7 +97,8 @@ LDFLAGS="-pie"
 %configure \
     --with-gphoto2=%{_prefix} \
     --with-docdir=%{_docdir}/%{name}-%{version} \
-    --disable-locking --disable-rpath
+    --disable-locking --disable-rpath \
+    --enable-pthread
 make %{?_smp_mflags}
 
 
@@ -162,6 +163,9 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/sane-backends.pc
 
 %changelog
+* Thu Nov 17 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 1.0.21-3.R
+- rebuilt with --enable-pthread
+
 * Fri Jun 25 2010 Nils Philippsen <nils@redhat.com> - 1.0.21-3
 - build with -fno-strict-aliasing
 - use PIC/PIE because SANE-enabled software is likely to deal with data coming
